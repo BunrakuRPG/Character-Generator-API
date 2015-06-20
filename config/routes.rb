@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :alignments
   resources :races
   resources :characters
   devise_for :users, controllers: { sessions: 'sessions' }
