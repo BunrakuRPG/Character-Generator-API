@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :races
   resources :characters
   devise_for :users, controllers: { sessions: 'sessions' }
   # The priority is based upon order of creation: first created -> highest priority.
