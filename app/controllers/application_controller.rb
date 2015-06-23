@@ -7,7 +7,13 @@ class ApplicationController < ActionController::Base
 
   # Enter the normal Devise authentication path,
   # using the token authenticated user if available
-  before_filter :authenticate_user!
+  #before_filter :authenticate_user!
+
+  protected
+
+  def login_required
+    head :unauthorized unless user_signed_in?
+  end
 
   private
 

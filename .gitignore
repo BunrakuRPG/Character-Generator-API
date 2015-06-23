@@ -4,6 +4,7 @@ tmp/**/*
 doc/api
 doc/app
 db/development.sqlite3
+db/schema.rb
 .idea/
 config/email.yml
 .bundle
