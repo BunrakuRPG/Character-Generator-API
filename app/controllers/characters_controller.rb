@@ -3,7 +3,21 @@ class CharactersController < ApplicationController
   before_filter :login_required
 
   def index
-    render text: "This is a test." unless user_signed_in?
+    @characters = Character.where(user: current_user)
+    render json: @characters
   end
+
+  def show
+    @character = Character.find(params[:id])
+    if @character.user == current_user
+      render json: @character
+    else
+      render head: :unauthorized
+    end
+
+
+  end
+
+
 
 end
